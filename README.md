@@ -1,3 +1,5 @@
+![CI Status](https://github.com/mohamedadel-devops/devops-ci-cd-practice/actions/workflows/main.yml/badge.svg)
+
 # DevOps CI/CD Practice Project
 
 This project demonstrates a full CI/CD pipeline using **Docker**, **GitHub Actions**, and **AWS EC2**.  
@@ -65,7 +67,4 @@ requirements.txt — Python dependencies
 
 .github/workflows/main.yml — GitHub Actions CI pipeline
 
-✍️ Author
-Mohamed Adel Asar
-💼 LinkedIn
-🌐 Portfolio
+
