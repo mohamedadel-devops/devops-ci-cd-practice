@@ -1,17 +1,27 @@
-name: CI Docker Build
+name: CI Build & Run
 
 on: [push]
 
 jobs:
-  build:
+  build-and-run:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v3
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
 
       - name: Build Docker image
-        run: docker build -t ci-test-image .
+        run: docker build -t my-app-image .
+
+      - name: Run container
+        run: docker run --name test-container -d my-app-image
+
+      - name: Wait 5 seconds for app to start
+        run: sleep 5
+
+      - name: View container logs
+        run: docker logs test-container
 
